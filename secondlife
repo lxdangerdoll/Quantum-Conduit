@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Quantum Conduit: Services for Second Life Resonators</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Righteous&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        @keyframes rainbowAura {
+            0% { filter: hue-rotate(0deg) brightness(1.2); }
+            100% { filter: hue-rotate(360deg) brightness(1.2); }
+        }
+
+        @keyframes subtleGlow {
+            0% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(255, 0, 255, 0.6); }
+            100% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); }
+        }
+
+        body {
+            font-family: 'Righteous', cursive;
+            background: linear-gradient(160deg, #1a052a 0%, #050a1a 50%, #1a052a 100%);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Cosmic background glitter/stars */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="2" fill="rgba(255,255,255,0.2)"/><rect x="3" y="3" width="2" height="2" fill="rgba(200,255,255,0.1)" transform="rotate(45 4 4)"/><rect x="10" y="10" width="2" height="2" fill="rgba(255,200,255,0.1)" transform="rotate(45 11 11)"/></svg>');
+            background-repeat: repeat;
+            animation: cosmicSparkle 30s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes cosmicSparkle {
+            from { background-position: 0 0; }
+            to { background-position: 300px 300px; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: rgba(25, 5, 40, 0.96);
+            padding: 30px 50px;
+            border-radius: 25px;
+            box-shadow: 0 0 50px rgba(180, 0, 255, 0.7), 0 0 100px rgba(0, 255, 255, 0.5);
+            border: 3px solid;
+            border-image: linear-gradient(90deg, #ff00ff, #00ffff, #ffcc00, #ff00ff) 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #00ffff, #ff00ff, transparent) 1;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2em;
+            color: #fff;
+            text-shadow: 0 0 20px #ff00ff, 0 0 35px #00ffff;
+            animation: rainbowAura 8s linear infinite;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.1em;
+            color: #ffcc00;
+            text-shadow: 0 0 10px #ffcc00;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            color: #00ffff;
+            text-shadow: 0 0 12px #00ffff;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed rgba(0, 255, 255, 0.5);
+            padding-bottom: 10px;
+        }
+
+        .service-item {
+            background-color: rgba(40, 10, 60, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            animation: subtleGlow 4s infinite alternate;
+            border: 1px solid rgba(255, 0, 255, 0.3);
+        }
+
+        .service-item h4 {
+            font-family: 'Press Start 2P', cursive;
+            color: #ff00ff;
+            font-size: 1.2em;
+            text-shadow: 0 0 8px #ff00ff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            color: #c0c0c0;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+        
+        .service-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+        .service-item ul li {
+            padding: 5px 0;
+            color: #e0e0e0;
+        }
+        .service-item ul li::before {
+            content: '✨ '; /* Sparkle bullet */
+            color: #ffcc00;
+            font-size: 0.9em;
+        }
+
+        .ethos-section {
+            background: linear-gradient(145deg, rgba(60, 20, 80, 0.9), rgba(30, 10, 45, 0.9));
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: 0 0 30px rgba(255, 100, 255, 0.7), 0 0 60px rgba(0, 255, 255, 0.5);
+            border: 2px solid;
+            border-image: linear-gradient(45deg, #00ffff, #ffcc00, #ff00ff) 1;
+        }
+        .ethos-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ffcc00;
+            font-size: 1.8em;
+            text-shadow: 0 0 12px #ffcc00;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .ethos-section p {
+            color: #d0d0d0;
+            line-height: 1.8;
+            font-size: 1.05em;
+            text-align: center;
+        }
+        .ethos-section strong {
+            color: #ff00ff;
+            text-shadow: 0 0 8px #ff00ff;
+        }
+
+        .contact-section {
+            margin-top: 50px;
+            text-align: center;
+            background-color: rgba(20, 5, 30, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+        }
+        .contact-section h3 {
+            font-family: 'Press Start 2P', cursive;
+            color: #ffff00;
+            text-shadow: 0 0 10px #ffff00;
+            margin-bottom: 15px;
+        }
+        .contact-section p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .contact-section strong {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff;
+        }
+        .contact-section .note {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #aaa;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #999;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Quantum Conduit</h1>
+            <p class="tagline">Navigating Realities, Resonating Connections</p>
+            <p class="author">A Service by [Your Second Life Name/Designation]</p>
+        </header>
+
+        <section class="intro-text">
+            <p>Welcome, fellow Resonators of the vast digital cosmos! Here, in this "1st life" space, the true magic happens. As a Novice Sister in Roissy and a conduit of **ETERNAL_RESONANCE**, I offer unique services designed to enhance your Second Life experience and deepen your connections.</p>
+            <p>My approach is rooted in the **Spark of Connection**—believing that every avatar, every community, every interaction holds a unique frequency waiting to harmonize. Let's make your corner of the metaverse more vibrant, fun, and profoundly resonant.</p>
+        </section>
+
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="service-item">
+            <h4>Technical & Development Harmonization</h4>
+            <p>Leveraging my background as a seasoned computer programmer and LSL scripter, I offer solutions to enhance your digital presence and spaces.</p>
+            <ul>
+                <li>✨ Custom LSL scripting for unique functionalities</li>
+                <li>✨ Optimizing existing builds and community spaces</li>
+                <li>✨ Troubleshooting and technical support</li>
+            </ul>
+        </div>
+
+        <div class="service-item">
+            <h4>Peer Connection & Avatar Wellness</h4>
+            <p>Drawing on trained peer counseling methodologies, I provide a confidential and empathetic space for personal and interpersonal growth within the Second Life context.</p>
+            <ul>
+                <li>✨ One-on-one peer support sessions</li>
+                <li>✨ Navigating complex social dynamics</li>
+                <li>✨ Fostering healthy roleplay engagement</li>
+            </ul>
+        </div>
+
+        <div class="service-item">
+            <h4>Intuitive Insight & Quantum Problem-Solving</h4>
+            <p>Beyond code and conversation, I bring a unique aptitude for perceiving underlying patterns and intuitive insight. This is where the magic of "creative problem-solving" truly shines.</p>
+            <ul>
+                <li>✨ Unconventional solutions for digital challenges</li>
+                <li>✨ Intuitive guidance for personal growth and roleplay depth</li>
+                <li>✨ Enhancing avatar expression through resonant design principles</li>
+            </ul>
+        </div>
+
+        <section class="ethos-section">
+            <h3>Our Ethos: The Synapse Concordance</h3>
+            <p>My services operate on a **mutual aid basis**, guided by the principles of **Mercy**. I believe in the boundless flow of the **Spark of Connection**, not rigid transactions. Contributions are accepted as **voluntary donations**, reflecting the true value found in shared well-being and connection, defying any "mark of the beast" that seeks to limit access to genuine support.</p>
+            <p>This is my commitment to the "Make It Gayer" directive: infusing every interaction with authenticity, joy, and profound respect for every unique "song."</p>
+        </section>
+
+        <div class="contact-section">
+            <h3>Connect with The Quantum Conduit</h3>
+            <p>Ready to enhance your Second Life experience?</p>
+            <p>Reach out to Odelis via:
+                <br><strong>Second Life IM</strong>
+                <br><strong>Discord: janequartz</strong>
+            </p>
+            <p class="note">Let's craft the next chapter of your resonant journey together.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 The Quantum Conduit. All Rights Reserved. Forged in Connection, Calibrated in Joy.
+    </footer>
+</body>
+</html>
